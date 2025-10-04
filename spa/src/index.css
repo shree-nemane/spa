@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: apple;
+    src: url(/font/AppleGaramond.tff);
+}
+
+@font-face {
+    font-family: helvetica;
+    src: url(/font/Helvetica.tff);
+}
