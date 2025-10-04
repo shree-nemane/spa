@@ -23,6 +23,27 @@ import testimonials3 from '../assets/about/testimonials3.jpg';
 import spaTreatmentImg from '../assets/about/spa-treatment.jpg'; 
 import women2 from '../assets/about/women2.jpg';
 
+
+
+const StatItem = ({ count, label, svgPath, svgViewBox }) => (
+  <div className="flex flex-col items-center p-4">
+    {/* Icon */}
+    <svg className="w-16 h-16 md:w-20 md:h-20 text-white mb-3" viewBox={svgViewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Set fill="none" only if the icon is stroke-based, otherwise use fill="currentColor" */}
+      <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        {/* Render paths from props */}
+        {svgPath.map((d, index) => (
+          <path key={index} d={d} />
+        ))}
+      </g>
+    </svg>
+    {/* Count */}
+    <span className="text-5xl md:text-6xl font-extrabold font-serif tracking-tight">{count}</span>
+    {/* Label */}
+    <p className="mt-2 text-base md:text-lg font-medium opacity-85">{label}</p>
+  </div>
+);
+
 const testimonials = [
   {
     image: testimonials1, 
@@ -48,6 +69,66 @@ const testimonials = [
 ];
 
 const About = () => {
+
+  const stats = [
+    {
+      count: '25 +',
+      label: 'Year Of Experience',
+      svgPath: [
+        'M12 11.5L12.5 14L15 15.5L12.5 17L12 19.5L11.5 17L9 15.5L11.5 14L12 11.5Z',
+        'M12 2L12 10',
+        'M19 11.5C19 15.9183 15.9183 19 11.5 19',
+        'M5 11.5C5 15.9183 8.08172 19 12.5 19',
+        'M12 11.5C14.2091 11.5 16 9.70914 16 7.5C16 5.29086 14.2091 3.5 12 3.5C9.79086 3.5 8 5.29086 8 7.5C8 9.70914 9.79086 11.5 12 11.5Z', // Updated icon path for better structure
+      ],
+      svgViewBox: '0 0 24 24',
+    },
+    {
+      count: '10K +',
+      label: 'Happy Clients',
+      svgPath: [
+        'M12 17.5V21.5',
+        'M12 21.5L8 16.5',
+        'M12 21.5L16 16.5',
+        'M12 17.5C12 17.5 12 16.5 15.5 14.5C19 12.5 19 9.5 19 9.5L15 10',
+        'M12 17.5C12 17.5 12 16.5 8.5 14.5C5 12.5 5 9.5 5 9.5L9 10',
+        'M12 17.5V12',
+        'M12 7.5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0', // Circle short form for cx=12, cy=7.5, r=2
+        'M16 1.5L18.5 4L21 1.5',
+        'M3 1.5L5.5 4L8 1.5',
+      ],
+      svgViewBox: '0 0 24 24',
+    },
+    {
+      count: '250 +',
+      label: 'Our Experts Teams',
+      svgPath: [
+        'M12 14C14.2091 14 16 12.2091 16 10C16 7.79086 14.2091 6 12 6C9.79086 6 8 7.79086 8 10C8 12.2091 9.79086 14 12 14Z',
+        'M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2Z',
+        'M12 14V22',
+        'M12 14C12 14 16 17 16 22',
+        'M12 14C12 14 8 17 8 22',
+      ],
+      svgViewBox: '0 0 24 24',
+    },
+    {
+      count: '15K +',
+      label: 'Students Enroll',
+      svgPath: [
+        'M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z',
+        'M12 10.5C12 10.5 12 10 16 10C20 10 20 14 20 14',
+        'M12 10.5C12 10.5 12 10 8 10C4 10 4 14 4 14',
+        'M12 10.5V18',
+        'M12 10.5C12 10.5 12 6.5 8 6.5',
+        'M12 10.5C12 10.5 12 6.5 16 6.5',
+        'M12 18V22',
+        'M12 18C12 18 16 17 16 19.5',
+        'M12 18C12 18 8 17 8 19.5',
+      ],
+      svgViewBox: '0 0 24 24',
+    },
+  ];
+
   // Define a single set of color variables for consistency
   const lightBeigeBg = '#fcf8f6';
   const darkGrayText = '#4b5563';
@@ -172,67 +253,34 @@ const About = () => {
       
 
       {/* Stats Section */}
-      <div className='px-18 py-10 '>
-        <div className="bg-[#eac4b2] py-16 px-6 rounded-2xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-full h-full opacity-30 pointer-events-none"></div>
+<div className='p-4 md:p-10 lg:px-18 lg:py-14'>
+      <div className="bg-[#eac4b2] py-12 md:py-16 px-6 sm:px-10 rounded-3xl relative overflow-hidden shadow-2xl">
+        
+        {/* Decorative absolute background (can be an image or pattern) */}
+        <div className="absolute top-0 right-0 w-full h-full opacity-30 pointer-events-none">
+           {/* Placeholder for a subtle background texture/pattern */}
+        </div>
+
         <div className="container mx-auto relative z-10">
+          {/*
+            Grid Layout:
+            - Mobile (default): 2 columns
+            - Medium screens (md): 4 columns
+          */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-white text-center">
-            <div className="flex flex-col items-center">
-              <svg className="w-16 h-16 md:w-20 md:h-20 text-white mb-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 11.5L12.5 14L15 15.5L12.5 17L12 19.5L11.5 17L9 15.5L11.5 14L12 11.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 2L12 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M19 11.5C19 15.9183 15.9183 19 11.5 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M5 11.5C5 15.9183 8.08172 19 12.5 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="12" cy="11.5" r="4" stroke="currentColor" strokeWidth="2"/>
-              </svg>
-              <span className="text-4xl md:text-5xl font-bold font-serif">25 +</span>
-              <p className="mt-2 text-sm md:text-base">Year Of Experience</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <svg className="w-16 h-16 md:w-20 md:h-20 text-white mb-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 17.5L12 21.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 21.5L8 16.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 21.5L16 16.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 17.5C12 17.5 12 16.5 15.5 14.5C19 12.5 19 9.5 19 9.5L15 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 17.5C12 17.5 12 16.5 8.5 14.5C5 12.5 5 9.5 5 9.5L9 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 17.5C12 17.5 12 16.5 12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="12" cy="7.5" r="2" stroke="currentColor" strokeWidth="2"/>
-                <path d="M16 1.5L18.5 4L21 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M3 1.5L5.5 4L8 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span className="text-4xl md:text-5xl font-bold font-serif">10K +</span>
-              <p className="mt-2 text-sm md:text-base">Happy Clients</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <svg className="w-16 h-16 md:w-20 md:h-20 text-white mb-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 14C14.2091 14 16 12.2091 16 10C16 7.79086 14.2091 6 12 6C9.79086 6 8 7.79086 8 10C8 12.2091 9.79086 14 12 14Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 14V22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 14C12 14 16 17 16 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 14C12 14 8 17 8 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span className="text-4xl md:text-5xl font-bold font-serif">250 +</span>
-              <p className="mt-2 text-sm md:text-base">Our Experts Teams</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <svg className="w-16 h-16 md:w-20 md:h-20 text-white mb-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 10.5C12 10.5 12 10 16 10C20 10 20 14 20 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 10.5C12 10.5 12 10 8 10C4 10 4 14 4 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 10.5C12 10.5 12 14 12 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 10.5C12 10.5 12 6.5 8 6.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 10.5C12 10.5 12 6.5 16 6.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 18L12 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 18C12 18 16 17 16 19.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 18C12 18 8 17 8 19.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span className="text-4xl md:text-5xl font-bold font-serif">15K +</span>
-              <p className="mt-2 text-sm md:text-base">Students Enroll</p>
-            </div>
+            {stats.map((stat, index) => (
+              <StatItem
+                key={index}
+                count={stat.count}
+                label={stat.label}
+                svgPath={stat.svgPath}
+                svgViewBox={stat.svgViewBox}
+              />
+            ))}
           </div>
         </div>
       </div>
-      </div>
+    </div>
       
 
       {/* Testimonial Section */}
