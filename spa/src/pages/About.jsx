@@ -13,16 +13,21 @@ import Header from '../component/header/Header';
 import Footer from '../component/footer/Footer';
 
 // Import all necessary images
-import officeImg from '../assets/about/office.jpg'; 
+import officeImg from '../assets/about/office.jpg';
 import team1Img from '../assets/about/team1.jpg';
 import team2Img from '../assets/about/team2.jpg';
 import team3Img from '../assets/about/team3.jpg';
 import testimonials1 from '../assets/about/testimonials1.jpg';
 import testimonials2 from '../assets/about/testimonials2.jpg';
 import testimonials3 from '../assets/about/testimonials3.jpg';
-import spaTreatmentImg from '../assets/about/spa-treatment.jpg'; 
+import spaTreatmentImg from '../assets/about/spa-treatment.jpg';
 import women2 from '../assets/about/women2.jpg';
 
+
+import stat1Img from '../assets/about/experience.png';
+import stat2Img from '../assets/about/customers.png';
+import stat3Img from '../assets/about/people.png';
+import stat4Img from '../assets/about/office.png';
 
 
 const StatItem = ({ count, label, svgPath, svgViewBox }) => (
@@ -46,7 +51,7 @@ const StatItem = ({ count, label, svgPath, svgViewBox }) => (
 
 const testimonials = [
   {
-    image: testimonials1, 
+    image: testimonials1,
     text: 'posuere luctus orci donec vitae mattis quam, vitae tempor arcu. Aenean non odio porttitor, convallis erat sit amet. Being a survivor now realized was not educated or aware about what breas.',
     name: 'Kevin Smith',
     title: 'Marketing Manager',
@@ -72,60 +77,24 @@ const About = () => {
 
   const stats = [
     {
-      count: '25 +',
-      label: 'Year Of Experience',
-      svgPath: [
-        'M12 11.5L12.5 14L15 15.5L12.5 17L12 19.5L11.5 17L9 15.5L11.5 14L12 11.5Z',
-        'M12 2L12 10',
-        'M19 11.5C19 15.9183 15.9183 19 11.5 19',
-        'M5 11.5C5 15.9183 8.08172 19 12.5 19',
-        'M12 11.5C14.2091 11.5 16 9.70914 16 7.5C16 5.29086 14.2091 3.5 12 3.5C9.79086 3.5 8 5.29086 8 7.5C8 9.70914 9.79086 11.5 12 11.5Z', // Updated icon path for better structure
-      ],
-      svgViewBox: '0 0 24 24',
+      count: '30+',
+      label: 'Years Of Experience',
+      image: stat1Img,
     },
     {
-      count: '10K +',
+      count: '15K+',
       label: 'Happy Clients',
-      svgPath: [
-        'M12 17.5V21.5',
-        'M12 21.5L8 16.5',
-        'M12 21.5L16 16.5',
-        'M12 17.5C12 17.5 12 16.5 15.5 14.5C19 12.5 19 9.5 19 9.5L15 10',
-        'M12 17.5C12 17.5 12 16.5 8.5 14.5C5 12.5 5 9.5 5 9.5L9 10',
-        'M12 17.5V12',
-        'M12 7.5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0', // Circle short form for cx=12, cy=7.5, r=2
-        'M16 1.5L18.5 4L21 1.5',
-        'M3 1.5L5.5 4L8 1.5',
-      ],
-      svgViewBox: '0 0 24 24',
+      image: stat2Img,
     },
     {
-      count: '250 +',
+      count: '300+',
       label: 'Our Experts Teams',
-      svgPath: [
-        'M12 14C14.2091 14 16 12.2091 16 10C16 7.79086 14.2091 6 12 6C9.79086 6 8 7.79086 8 10C8 12.2091 9.79086 14 12 14Z',
-        'M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2Z',
-        'M12 14V22',
-        'M12 14C12 14 16 17 16 22',
-        'M12 14C12 14 8 17 8 22',
-      ],
-      svgViewBox: '0 0 24 24',
+      image: stat3Img,
     },
     {
-      count: '15K +',
-      label: 'Students Enroll',
-      svgPath: [
-        'M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z',
-        'M12 10.5C12 10.5 12 10 16 10C20 10 20 14 20 14',
-        'M12 10.5C12 10.5 12 10 8 10C4 10 4 14 4 14',
-        'M12 10.5V18',
-        'M12 10.5C12 10.5 12 6.5 8 6.5',
-        'M12 10.5C12 10.5 12 6.5 16 6.5',
-        'M12 18V22',
-        'M12 18C12 18 16 17 16 19.5',
-        'M12 18C12 18 8 17 8 19.5',
-      ],
-      svgViewBox: '0 0 24 24',
+      count: '12',
+      label: 'Branches in City',
+      image: stat4Img,
     },
   ];
 
@@ -133,7 +102,7 @@ const About = () => {
   const lightBeigeBg = '#fcf8f6';
   const darkGrayText = '#4b5563';
   const accentPink = '#d05e5e';
-  const callToActionBg = '#eac4b2'; 
+  const callToActionBg = '#eac4b2';
 
   return (
     <div>
@@ -144,11 +113,6 @@ const About = () => {
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${officeImg})` }}></div>
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="relative z-10 text-white p-4 max-w-lg md:max-w-2xl">
-          <div className="w-12 h-12 mb-4">
-            <svg className="w-full h-full text-[#d05e5e]" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12 6.5c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5zM12 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
-            </svg>
-          </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif mb-2 leading-tight">
             About Us
           </h1>
@@ -174,7 +138,7 @@ const About = () => {
           <div className="w-full relative z-10 pt-16 lg:pt-0">
             <div className={`flex items-center text-sm uppercase text-[${accentPink}] font-semibold mb-2`}>
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12 6.5c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5zM12 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12 6.5c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5zM12 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
               </svg>
               About Us
             </div>
@@ -187,13 +151,13 @@ const About = () => {
             <div className="flex flex-col sm:flex-row sm:space-x-8 space-y-4 sm:space-y-0 mb-8">
               <div className={`flex items-center space-x-2 text-[${darkGrayText}]`}>
                 <svg className={`w-5 h-5 text-[${accentPink}]`} fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM6.707 9.293a1 1 0 000 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 00-1.414 0z"/>
+                  <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM6.707 9.293a1 1 0 000 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 00-1.414 0z" />
                 </svg>
                 <span>15M+ Happy Clients</span>
               </div>
               <div className={`flex items-center space-x-2 text-[${darkGrayText}]`}>
                 <svg className={`w-5 h-5 text-[${accentPink}]`} fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM6.707 9.293a1 1 0 000 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 00-1.414 0z"/>
+                  <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM6.707 9.293a1 1 0 000 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 00-1.414 0z" />
                 </svg>
                 <span>Comprehensive Solution</span>
               </div>
@@ -206,135 +170,172 @@ const About = () => {
       </div>
 
       {/* Philosophy, Mission, Team Section */}
-      <div className='pb-20'>
-        <div className="bg-white py-12 px-6 lg:px-12">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left my-16 mb-20 ">
-          <div>
-            <h3 className="text-xl md:text-2xl font-serif text-[#4b5563] font-bold mb-2">Our Philosophy:</h3>
-            <p className="text-[#4b5563]">Holistic wellness and personal care</p>
-          </div>
-          <div>
-            <h3 className="text-xl md:text-2xl font-serif text-[#4b5563] font-bold mb-2">Established in 2015</h3>
-            <p className="text-[#4b5563]">A journey of rejuvenation</p>
-          </div>
-          <div>
-            <h3 className="text-xl md:text-2xl font-serif text-[#4b5563] font-bold mb-2">Mission:</h3>
-            <p className="text-[#4b5563]">To inspire wellness through nature and care</p>
-          </div>
-        </div>
-        <div className="container mx-auto relative">
-          <div className="absolute inset-y-0 left-0 w-24 bg-gray-50 opacity-20 transform -translate-x-1/2 -z-10 hidden lg:block"></div>
-          <div className="flex flex-col lg:flex-row items-start lg:items-center">
-            <div className="w-full lg:w-1/4 mb-8 lg:mb-0">
-              <h2 className="text-4xl md:text-5xl font-serif text-[#4b5563] leading-tight">Spa Team</h2>
-              <p className="text-sm text-gray-500 mt-2">Meet our dedicated specialists.</p>
-            </div>
-            <div className="w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <img src={team1Img} alt="Team member 1" className="w-full h-auto object-cover rounded-lg mb-4" />
-                <h4 className="text-lg font-serif text-[#4b5563] font-semibold">T.L</h4>
-                <p className="text-sm text-gray-600 mt-1">4th year in a row best therapist</p>
-              </div>
-              <div className="text-center">
-                <img src={team2Img} alt="Team member 2" className="w-full h-auto object-cover rounded-lg mb-4" />
-                <h4 className="text-lg font-serif text-[#4b5563] font-semibold">T.D</h4>
-                <p className="text-sm text-gray-600 mt-1">Specializes in organic skincare</p>
-              </div>
-              <div className="text-center">
-                <img src={team3Img} alt="Team member 3" className="w-full h-auto object-cover rounded-lg mb-4" />
-                <h4 className="text-lg font-serif text-[#4b5563] font-semibold">C.B</h4>
-                <p className="text-sm text-gray-600 mt-1">Specializes in organic detoxes</p>
-              </div>
-            </div>
-          </div>
-        </div>
+<div className="bg-white py-12 px-6 lg:px-12">
+  <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left my-16 mb-20">
+    <div className='flex flex-col items-center'>
+      <h3 className="text-xl md:text-2xl font-serif text-[#4b5563] font-bold mb-2">
+        Our Philosophy:
+      </h3>
+      <p className="text-[#4b5563]">Holistic wellness and personal care</p>
+    </div>
+    <div className='flex flex-col items-center'>
+      <h3 className="text-xl md:text-2xl font-serif text-[#4b5563] font-bold mb-2">
+        Established in 2015
+      </h3>
+      <p className="text-[#4b5563]">A journey of rejuvenation</p>
+    </div>
+    <div className='flex flex-col items-center'>
+      <h3 className="text-xl md:text-2xl font-serif text-[#4b5563] font-bold mb-2">
+        Mission:
+      </h3>
+      <p className="text-[#4b5563]">To inspire wellness through nature and care</p>
+    </div>
+  </div>
+</div>
+
+
+    <div className="py-20 px-6 lg:px-12 bg-[#fcf8f6]">
+  <div className="container mx-auto">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl md:text-5xl font-serif text-[#4b5563] font-bold mb-4">
+        Our Core Values
+      </h2>
+      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        We believe that true wellness is a journey of balance and self-care. Our philosophy is rooted in a commitment to quality, tranquility, and personalized service.
+      </p>
+    </div>
+    
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Value 1: Commitment to Quality */}
+      <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl">
+        <svg className="w-12 h-12 text-[#eac4b2] mb-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2.91 14.59L5 12.5l1.41-1.41L9.09 13.59l4.59-4.59L15 10.41l-5.91 5.91z"></path>
+        </svg>
+        <h3 className="text-2xl font-serif text-[#4b5563] font-semibold mb-2">Quality & Purity</h3>
+        <p className="text-gray-500">
+          We use only the finest organic and ethically sourced products, ensuring every treatment is safe, effective, and free from harmful chemicals.
+        </p>
       </div>
+
+      {/* Value 2: Tranquility & Serenity */}
+      <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl">
+        <svg className="w-12 h-12 text-[#eac4b2] mb-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"></path>
+        </svg>
+        <h3 className="text-2xl font-serif text-[#4b5563] font-semibold mb-2">Holistic Wellness</h3>
+        <p className="text-gray-500">
+          Our approach goes beyond treatments, focusing on restoring balance to your mind, body, and spirit in a peaceful and serene environment.
+        </p>
       </div>
       
+      {/* Value 3: Personalized Care */}
+      <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl">
+        <svg className="w-12 h-12 text-[#eac4b2] mb-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+        </svg>
+        <h3 className="text-2xl font-serif text-[#4b5563] font-semibold mb-2">Dedicated Experts</h3>
+        <p className="text-gray-500">
+          Our team of specialists provides a customized experience tailored to your unique needs, ensuring you receive the highest level of care.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
       {/* Stats Section */}
+
 <div className='p-4 md:p-10 lg:px-18 lg:py-14'>
-      <div className="bg-[#eac4b2] py-12 md:py-16 px-6 sm:px-10 rounded-3xl relative overflow-hidden shadow-2xl">
-        
-        {/* Decorative absolute background (can be an image or pattern) */}
-        <div className="absolute top-0 right-0 w-full h-full opacity-30 pointer-events-none">
-           {/* Placeholder for a subtle background texture/pattern */}
+  <div className="bg-white py-12 md:py-16 px-6 sm:px-10 rounded-2xl shadow-xl">
+    <div className="container mx-auto">
+      <div className="flex flex-col md:flex-row items-center justify-between text-center">
+        {stats.map((stat, index) => (
+          <div
+            key={index}
+            className={`flex-1 flex flex-col items-center justify-center p-4 ${
+              index < stats.length - 1 ? 'md:border-r border-[#eac4b2] last:border-r-0' : ''
+            }`}
+          >
+            {/* Image icon container */}
+            <div className="mb-4">
+              <img src={stat.image} alt={stat.label} className="w-16 h-16 object-contain mx-auto" />
+            </div>
+            {/* Stat count */}
+            <div className="text-4xl md:text-5xl font-serif font-bold text-[#4b5563]">
+              {stat.count}
+            </div>
+            {/* Stat label */}
+            <div className="text-md uppercase tracking-widest text-gray-600 mt-2">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+      {/* Testimonial Section */}
+
+    <div className="bg-[#f8f5f0] my-10 py-16 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+        {/* Left Column: Heading and Image */}
+        <div className="w-full lg:w-1/2 mb-12 lg:mb-0 relative">
+          <p className="text-[#c19a6b] uppercase text-sm font-semibold mb-2 tracking-widest">Our Testimonial</p>
+          <h2 className="text-4xl md:text-5xl font-serif text-[#5c4a45] leading-tight mb-8">
+            People Talk About <br /> Sunlit Beauty Care
+          </h2>
+          <div className="relative w-full h-auto flex justify-center lg:justify-start">
+            <img 
+              src={women2} 
+              alt="Two women in spa" 
+              className="w-full max-w-md rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-500" 
+            />
+          </div>
         </div>
 
-        <div className="container mx-auto relative z-10">
-          {/*
-            Grid Layout:
-            - Mobile (default): 2 columns
-            - Medium screens (md): 4 columns
-          */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-white text-center">
-            {stats.map((stat, index) => (
-              <StatItem
-                key={index}
-                count={stat.count}
-                label={stat.label}
-                svgPath={stat.svgPath}
-                svgViewBox={stat.svgViewBox}
-              />
+        {/* Right Column: Testimonial Slider */}
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative">
+          <Swiper
+            spaceBetween={40}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            modules={[Pagination, Autoplay]}
+            className="mySwiper w-full max-w-lg"
+          >
+            {testimonials.map((testimonial, index) => (
+              <SwiperSlide key={index}>
+                <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl w-full">
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto mb-8 ring-4 ring-offset-2 ring-[#c19a6b]">
+                    <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
+                  </div>
+                  <p className="text-[#5c4a45] text-lg md:text-xl text-center italic mb-8">
+                    &ldquo;{testimonial.text}&rdquo;
+                  </p>
+                  <div className="text-center">
+                    <h4 className="text-xl font-bold text-[#5c4a45] font-serif">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-500 mt-1">{testimonial.title}</p>
+                    <div className="flex justify-center mt-4 text-sm">
+                      {[...Array(5)].map((star, i) => (
+                        <svg key={i} className={`w-5 h-5 ${i < testimonial.rating ? 'text-[#c19a6b]' : 'text-gray-300'}`} fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </div>
     </div>
-      
-
-      {/* Testimonial Section */}
-      <div className={`bg-[${lightBeigeBg}] my-10 p-12 lg:p-24 relative flex flex-col lg:flex-row items-center justify-center`}>
-        <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
-          <div className="w-full lg:w-1/2 mb-12 lg:mb-0 relative z-10">
-            <p className={`text-[${accentPink}] uppercase text-sm font-semibold mb-2`}>Our Testimonial</p>
-            <h2 className={`text-4xl md:text-5xl lg:text-6xl font-serif text-[${darkGrayText}] leading-tight mb-8`}>
-              Peoples Talk About <br /> Sunlit Beauty Care
-            </h2>
-            <div className="relative w-full h-auto flex justify-center lg:justify-start">
-              <img src={women2} alt="Two women in spa" className="w-full max-w-sm rounded-lg shadow-xl" />
-            </div>
-          </div>
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative z-10">
-            <Swiper
-              spaceBetween={30}
-              pagination={{
-                clickable: true,
-              }}
-              autoplay={{
-                delay: 5000,
-                disableOnInteraction: false,
-              }}
-              modules={[Pagination, Autoplay]}
-              className="mySwiper w-full max-w-lg"
-            >
-              {testimonials.map((testimonial, index) => (
-                <SwiperSlide key={index}>
-                  <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl w-full">
-                    <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-8">
-                      <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
-                    </div>
-                    <p className={`text-[${darkGrayText}] text-lg md:text-xl text-center mb-8`}>
-                      {testimonial.text}
-                    </p>
-                    <div className="text-center">
-                      <h4 className={`text-xl font-bold text-[${darkGrayText}] font-serif`}>{testimonial.name}</h4>
-                      <p className="text-sm text-gray-500">{testimonial.title}</p>
-                      <div className="flex justify-center mt-4">
-                        {[...Array(5)].map((star, i) => (
-                          <svg key={i} className={`w-5 h-5 ${i < testimonial.rating ? `text-[${accentPink}]` : 'text-gray-300'}`} fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div>
-      </div>
+  
       <Footer />
     </div>
   );

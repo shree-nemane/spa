@@ -1,8 +1,9 @@
 import React from 'react'
 import Header from '../component/header/Header'
 import Footer from '../component/footer/Footer'
-import massageImg from '../assets/services_assets/massage.jpg';
 import homeSpaImg from '../assets/home_assets/home_spa.jpg';
+import massageImg1 from '../assets/home_assets/massageImg1.jpg';
+import massageImg2 from '../assets/home_assets/massageImg2.jpg';
 
 
 const Home = () => {
@@ -44,11 +45,11 @@ const Home = () => {
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="relative group">
-                                <img src= {massageImg} alt="Person getting a massage" class="rounded-xl shadow-md transition-transform duration-300 transform group-hover:scale-105" />
+                                <img src= {massageImg1} alt="Person getting a massage" class="rounded-xl shadow-md transition-transform duration-300 transform group-hover:scale-105" />
                             </div>
 
                             <div class="relative group">
-                                <img src={massageImg} alt="Bathtub with flowers" class="rounded-xl shadow-md transition-transform duration-300 transform group-hover:scale-105" />
+                                <img src={massageImg2} alt="Bathtub with flowers" class="rounded-xl shadow-md transition-transform duration-300 transform group-hover:scale-105" />
                             </div>
                         </div>
                     </div>

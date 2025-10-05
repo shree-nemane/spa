@@ -131,10 +131,10 @@ const Contact = () => {
             <h2 className={`text-3xl font-serif text-[${darkGrayText}] mb-8`}>Our Details</h2>
             <div className="space-y-4 mb-10">
               <p className={`text-[${darkGrayText}]`}>
-                <strong>Phone:</strong> +1 (555) 123-4567
+                <strong>Phone:</strong> + 00 111 222 333
               </p>
               <p className={`text-[${darkGrayText}]`}>
-                <strong>Email:</strong> info@sunlitspa.com
+                <strong>Email:</strong> info@xyzspa.com
               </p>
               <p className={`text-[${darkGrayText}]`}>
                 <strong>Address:</strong> 123 Spa Wellness Rd, City, Country

@@ -6,101 +6,94 @@ import Footer from '../component/footer/Footer';
 import branchesHeroImg from '../assets/branches/branches-hero.jpg'; 
 
 const branchLocations = [
-  { id: 1, city: 'SURAT', description: 'Main Flagship Branch', address: '101 Wellness Street, Surat, Gujarat' },
-  { id: 2, city: 'NASHIK', description: 'Specialized Skincare Center', address: '202 Tranquility Road, Nashik, Maharashtra' },
-  { id: 3, city: 'HYDERABAD', description: 'Luxury Wellness & Retreat', address: '303 Relaxation Avenue, Hyderabad, Telangana' },
-  { id: 4, city: 'VADODARA', description: 'Traditional Therapy Hub', address: '404 Serenity Lane, Vadodara, Gujarat' },
-  { id: 5, city: 'ROURKELA', description: 'New Opening - Urban Spa', address: '505 Oasis Circle, Rourkela, Odisha' },
-  { id: 6, city: 'PUNE', description: 'Holistic & Ayurvedic Treatments', address: '606 Rejuvenation Path, Pune, Maharashtra' },
- 
+    { id: 1, city: 'SURAT', description: 'Main Flagship Branch', address: '101 Wellness Street, Surat, Gujarat' },
+    { id: 2, city: 'NASHIK', description: 'Specialized Skincare Center', address: '202 Tranquility Road, Nashik, Maharashtra' },
+    { id: 3, city: 'HYDERABAD', description: 'Luxury Wellness & Retreat', address: '303 Relaxation Avenue, Hyderabad, Telangana' },
+    { id: 4, city: 'VADODARA', description: 'Traditional Therapy Hub', address: '404 Serenity Lane, Vadodara, Gujarat' },
+    { id: 5, city: 'ROURKELA', description: 'New Opening - Urban Spa', address: '505 Oasis Circle, Rourkela, Odisha' },
+    { id: 6, city: 'PUNE', description: 'Holistic & Ayurvedic Treatments', address: '606 Rejuvenation Path, Pune, Maharashtra' },
 ];
 
-const CityIconPlaceholder = ({ city }) => (
-  // Simple geometric placeholder for the city landmark icon
-  <svg 
-    className="w-24 h-24 mx-auto mb-4 text-[#4b5563]" 
-    viewBox="0 0 100 100" 
-    fill="none" 
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect x="10" y="50" width="80" height="40" fill="currentColor" opacity="0.1"/>
-    <rect x="25" y="30" width="15" height="40" fill="currentColor"/>
-    <rect x="60" y="30" width="15" height="40" fill="currentColor"/>
-    <polygon points="50,10 70,30 30,30" fill="currentColor"/>
-    <circle cx="50" cy="80" r="8" fill="white" stroke="currentColor" strokeWidth="2"/>
-    <text x="50" y="85" fontSize="10" textAnchor="middle" fill="#4b5563" fontWeight="bold">{city.substring(0, 1)}</text>
-  </svg>
-);
-
+const BranchIcon = ({ city }) => {
+    // A more modern, abstract icon representing a building or landmark
+    return (
+        <svg
+            className="w-16 h-16 mx-auto mb-4 text-[#c19a6b] transform group-hover:scale-110 transition-transform duration-300"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+        >
+            <path d="M12 2L1 12h3v9h16v-9h3L12 2zm-1 7c0-.55.45-1 1-1s1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1V9z" />
+        </svg>
+    );
+};
 
 const Branches = () => {
-  const lightBeigeBg = '#fcf8f6'; 
-  const darkGrayText = '#4b5563'; 
-  const warmPinkBg = '#eac4b2'; 
+    return (
+        <div>
+            <Header />
 
-  return (
-    <div>
-      <Header />
+            {/* Hero Section */}
+            <div className="relative w-full h-[50vh] flex flex-col items-center justify-center text-center font-serif">
+                <div 
+                    className="absolute inset-0 bg-cover bg-center" 
+                    style={{ backgroundImage: `url(${branchesHeroImg})` }}
+                ></div>
+                <div className="absolute inset-0 bg-black opacity-50"></div>
+                <div className="relative z-10 p-4">
+                    <p className="uppercase text-sm font-semibold mb-2 text-white tracking-widest">
+                        Find your perfect escape
+                    </p>
+                    <h1 className="text-5xl md:text-7xl text-white leading-tight font-extrabold">
+                        Our Locations
+                    </h1>
+                </div>
+            </div>
 
-      {/* Hero Section */}
-      <div className="relative w-full h-[40vh] flex flex-col items-center justify-center text-center">
-        <div 
-          className="absolute inset-0 bg-cover bg-center" 
-          style={{ backgroundImage: `url(${branchesHeroImg})` }}
-        ></div>
-        <div className="absolute inset-0 bg-black opacity-40"></div>
-        <div className="relative z-10 p-4">
-            <p className="uppercase text-sm font-semibold mb-2 text-white">
-                Welcome to Spa
-            </p>
-            <h1 className="text-5xl md:text-6xl font-serif text-white leading-tight">
-                Our Global Branches
-            </h1>
+            {/* Locations Grid */}
+            <div className="bg-[#fcf8f6] py-20 px-4 md:px-8">
+                <div className="max-w-7xl mx-auto">
+                    {/* Subheading/Intro */}
+                    <div className="text-center mb-16">
+                        <p className="text-sm uppercase tracking-widest text-[#a87f6e] mb-2">
+                            A Tranquil Oasis, Wherever You Are
+                        </p>
+                        <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#5c4a45]">
+                            Discover Our Branches
+                        </h2>
+                    </div>
+
+                    {/* Cards Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 md:gap-12">
+                        {branchLocations.map((location) => (
+                            <div 
+                                key={location.id} 
+                                className="group bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-gray-100 flex flex-col items-center text-center font-sans"
+                            >
+                                <BranchIcon city={location.city} />
+                                
+                                <h3 className="text-2xl font-bold uppercase tracking-wider text-[#5c4a45] mb-2">
+                                    {location.city}
+                                </h3>
+                                
+                                <p className="text-sm text-gray-500 mb-3 italic">
+                                    {location.description}
+                                </p>
+
+                                <p className="text-sm text-gray-700 leading-relaxed max-w-[250px] mt-auto">
+                                    {location.address}
+                                </p>
+                                <a href="#" className="mt-6 text-[#a87f6e] font-semibold text-sm uppercase tracking-widest hover:underline transition-colors duration-300">
+                                    Get Directions &rarr;
+                                </a>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            <Footer />
         </div>
-      </div>
-
-      {/* Locations/Branches Grid */}
-      <div className={`bg-[${lightBeigeBg}] py-16 px-4 md:px-8 lg:px-16`}>
-        <div className="container mx-auto">
-          {/* Subheading/Intro */}
-          <div className="text-center mb-12">
-            <p className={`text-sm text-[${darkGrayText}] mb-2`}>
-                Experience Tranquility at Spa.
-            </p>
-            <h2 className={`text-3xl md:text-4xl font-serif font-bold text-[${darkGrayText}]`}>
-                Popular Cities
-            </h2>
-          </div>
-
-          {/* Cards Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8">
-            {branchLocations.map((location) => (
-              <div 
-                key={location.id} 
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-100 flex flex-col items-center text-center"
-              >
-                <CityIconPlaceholder city={location.city} />
-                
-                <h3 className={`text-lg font-bold uppercase tracking-wider text-[${darkGrayText}] mb-1`}>
-                  {location.city}
-                </h3>
-                
-                <p className="text-sm text-gray-500 mb-2">
-                  {location.description}
-                </p>
-
-                <p className={`text-xs text-[${darkGrayText}]`}>
-                    {location.address}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <Footer />
-    </div>
-  );
+    );
 };
 
 export default Branches;
