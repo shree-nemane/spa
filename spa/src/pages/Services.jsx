@@ -13,7 +13,7 @@ import massage2 from '../assets/services_assets/massage.png';
 import heal from '../assets/services_assets/heal.png';
 import wash from '../assets/services_assets/wash.png';
 import facial from '../assets/services_assets/facial.png';
-import aromatherapyImg from '../assets/services_assets/aromatherapy.jpg';
+import aromatherapyImg from '../assets/services_assets/AROMATHERAPY.jpg';
 import balineseImg from '../assets/services_assets/BALINESE_MASSAGE.jpg';
 import sportsImg from '../assets/services_assets/SPORTS_MASSAGE.jpg';
 import facialImg from '../assets/services_assets/FACIAL_MASSAGE.jpg';
