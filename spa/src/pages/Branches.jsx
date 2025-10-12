@@ -6,19 +6,14 @@ import Footer from '../component/footer/Footer';
 import branchesHeroImg from '../assets/branches/branches-hero.jpg'; 
 
 const branchLocations = [
-    { id: 1, city: 'SURAT', description: 'Main Flagship Branch', address: '101 Wellness Street, Surat, Gujarat' },
-    { id: 2, city: 'NASHIK', description: 'Specialized Skincare Center', address: '202 Tranquility Road, Nashik, Maharashtra' },
-    { id: 3, city: 'HYDERABAD', description: 'Luxury Wellness & Retreat', address: '303 Relaxation Avenue, Hyderabad, Telangana' },
-    { id: 4, city: 'VADODARA', description: 'Traditional Therapy Hub', address: '404 Serenity Lane, Vadodara, Gujarat' },
-    { id: 5, city: 'ROURKELA', description: 'New Opening - Urban Spa', address: '505 Oasis Circle, Rourkela, Odisha' },
-    { id: 6, city: 'PUNE', description: 'Holistic & Ayurvedic Treatments', address: '606 Rejuvenation Path, Pune, Maharashtra' },
-];
+    { id: 1, city: 'Chittorgarh', description: 'Main Flagship Branch', address: '1st Floor, Ofc. No.1, Raj Mall, Pratap Nagar, Chittaurgarh, India, 312205' },
+   ];
 
 const BranchIcon = ({ city }) => {
     // A more modern, abstract icon representing a building or landmark
     return (
         <svg
-            className="w-16 h-16 mx-auto mb-4 text-[#c19a6b] transform group-hover:scale-110 transition-transform duration-300"
+            className="w-16 h-16 mx-auto mb-4 text-[#C4912F] transform group-hover:scale-110 transition-transform duration-300"
             fill="currentColor"
             viewBox="0 0 24 24"
         >

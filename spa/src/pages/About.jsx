@@ -1,12 +1,4 @@
-// src/pages/About.jsx
-
 import React from 'react';
-
-// Import Swiper React components and styles
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination, Autoplay } from 'swiper/modules';
 
 // Import page components
 import Header from '../component/header/Header';
@@ -14,89 +6,12 @@ import Footer from '../component/footer/Footer';
 
 // Import all necessary images
 import officeImg from '../assets/about/office.jpg';
-import team1Img from '../assets/about/team1.jpg';
-import team2Img from '../assets/about/team2.jpg';
-import team3Img from '../assets/about/team3.jpg';
-import testimonials1 from '../assets/about/testimonials1.jpg';
-import testimonials2 from '../assets/about/testimonials2.jpg';
-import testimonials3 from '../assets/about/testimonials3.jpg';
 import spaTreatmentImg from '../assets/about/spa-treatment.jpg';
-import women2 from '../assets/about/women2.jpg';
 
-
-import stat1Img from '../assets/about/experience.png';
-import stat2Img from '../assets/about/customers.png';
-import stat3Img from '../assets/about/people.png';
-import stat4Img from '../assets/about/office.png';
-
-
-const StatItem = ({ count, label, svgPath, svgViewBox }) => (
-  <div className="flex flex-col items-center p-4">
-    {/* Icon */}
-    <svg className="w-16 h-16 md:w-20 md:h-20 text-white mb-3" viewBox={svgViewBox} fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Set fill="none" only if the icon is stroke-based, otherwise use fill="currentColor" */}
-      <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        {/* Render paths from props */}
-        {svgPath.map((d, index) => (
-          <path key={index} d={d} />
-        ))}
-      </g>
-    </svg>
-    {/* Count */}
-    <span className="text-5xl md:text-6xl font-extrabold font-serif tracking-tight">{count}</span>
-    {/* Label */}
-    <p className="mt-2 text-base md:text-lg font-medium opacity-85">{label}</p>
-  </div>
-);
-
-const testimonials = [
-  {
-    image: testimonials1,
-    text: 'posuere luctus orci donec vitae mattis quam, vitae tempor arcu. Aenean non odio porttitor, convallis erat sit amet. Being a survivor now realized was not educated or aware about what breas.',
-    name: 'Kevin Smith',
-    title: 'Marketing Manager',
-    rating: 5,
-  },
-  {
-    image: testimonials2,
-    text: 'This is the second testimonial. The services here are amazing and have made a huge difference in my life. I highly recommend it to everyone seeking wellness.',
-    name: 'Jane Doe',
-    title: 'Wellness Enthusiast',
-    rating: 4,
-  },
-  {
-    image: testimonials3,
-    text: 'Third testimonial. I am so happy with the results. The team is professional, friendly, and truly cares about their clients. A fantastic experience all around.',
-    name: 'John Doe',
-    title: 'Satisfied Customer',
-    rating: 5,
-  },
-];
 
 const About = () => {
 
-  const stats = [
-    {
-      count: '30+',
-      label: 'Years Of Experience',
-      image: stat1Img,
-    },
-    {
-      count: '15K+',
-      label: 'Happy Clients',
-      image: stat2Img,
-    },
-    {
-      count: '300+',
-      label: 'Our Experts Teams',
-      image: stat3Img,
-    },
-    {
-      count: '12',
-      label: 'Branches in City',
-      image: stat4Img,
-    },
-  ];
+  
 
   // Define a single set of color variables for consistency
   const lightBeigeBg = '#fcf8f6';
@@ -241,100 +156,6 @@ const About = () => {
     </div>
   </div>
 </div>
-
-      {/* Stats Section */}
-
-<div className='p-4 md:p-10 lg:px-18 lg:py-14'>
-  <div className="bg-white py-12 md:py-16 px-6 sm:px-10 rounded-2xl shadow-xl">
-    <div className="container mx-auto">
-      <div className="flex flex-col md:flex-row items-center justify-between text-center">
-        {stats.map((stat, index) => (
-          <div
-            key={index}
-            className={`flex-1 flex flex-col items-center justify-center p-4 ${
-              index < stats.length - 1 ? 'md:border-r border-[#eac4b2] last:border-r-0' : ''
-            }`}
-          >
-            {/* Image icon container */}
-            <div className="mb-4">
-              <img src={stat.image} alt={stat.label} className="w-16 h-16 object-contain mx-auto" />
-            </div>
-            {/* Stat count */}
-            <div className="text-4xl md:text-5xl font-serif font-bold text-[#4b5563]">
-              {stat.count}
-            </div>
-            {/* Stat label */}
-            <div className="text-md uppercase tracking-widest text-gray-600 mt-2">
-              {stat.label}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-      {/* Testimonial Section */}
-
-    <div className="bg-[#f8f5f0] my-10 py-16 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
-        {/* Left Column: Heading and Image */}
-        <div className="w-full lg:w-1/2 mb-12 lg:mb-0 relative">
-          <p className="text-[#c19a6b] uppercase text-sm font-semibold mb-2 tracking-widest">Our Testimonial</p>
-          <h2 className="text-4xl md:text-5xl font-serif text-[#5c4a45] leading-tight mb-8">
-            People Talk About <br /> Sunlit Beauty Care
-          </h2>
-          <div className="relative w-full h-auto flex justify-center lg:justify-start">
-            <img 
-              src={women2} 
-              alt="Two women in spa" 
-              className="w-full max-w-md rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-500" 
-            />
-          </div>
-        </div>
-
-        {/* Right Column: Testimonial Slider */}
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative">
-          <Swiper
-            spaceBetween={40}
-            slidesPerView={1}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 5000, disableOnInteraction: false }}
-            modules={[Pagination, Autoplay]}
-            className="mySwiper w-full max-w-lg"
-          >
-            {testimonials.map((testimonial, index) => (
-              <SwiperSlide key={index}>
-                <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl w-full">
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto mb-8 ring-4 ring-offset-2 ring-[#c19a6b]">
-                    <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
-                  </div>
-                  <p className="text-[#5c4a45] text-lg md:text-xl text-center italic mb-8">
-                    &ldquo;{testimonial.text}&rdquo;
-                  </p>
-                  <div className="text-center">
-                    <h4 className="text-xl font-bold text-[#5c4a45] font-serif">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-500 mt-1">{testimonial.title}</p>
-                    <div className="flex justify-center mt-4 text-sm">
-                      {[...Array(5)].map((star, i) => (
-                        <svg key={i} className={`w-5 h-5 ${i < testimonial.rating ? 'text-[#c19a6b]' : 'text-gray-300'}`} fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </div>
-    </div>
   
       <Footer />
     </div>

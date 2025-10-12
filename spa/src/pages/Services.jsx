@@ -1,16 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Import local image assets
 import Header from '../component/header/Header';
 import Footer from '../component/footer/Footer';
 
-import massageImg from '../assets/services_assets/massage.jpg';
-import facialImg from '../assets/services_assets/facial.jpg';
-import scrubImg from '../assets/services_assets/scrub.jpg';
-import washImg from '../assets/services_assets/wash.jpg';
 import serviceImg from '../assets/services_assets/services_hero.jpg';
-import headShoulderImg from '../assets/services_assets/head_shoulder.jpg'; // Assuming these paths exist
+import headShoulderImg from '../assets/services_assets/head_shoulder.jpg';
 import footMassageImg from '../assets/services_assets/foot_massage.jpg';
 import footReflexologyImg from '../assets/services_assets/foot_reflexology.jpg';
 import swedishMassageImg from '../assets/services_assets/swedish_massage.jpg';
@@ -18,31 +13,27 @@ import massage2 from '../assets/services_assets/massage.png';
 import heal from '../assets/services_assets/heal.png';
 import wash from '../assets/services_assets/wash.png';
 import facial from '../assets/services_assets/facial.png';
+import aromatherapyImg from '../assets/services_assets/aromatherapy.jpg';
+import balineseImg from '../assets/services_assets/BALINESE_MASSAGE.jpg';
+import sportsImg from '../assets/services_assets/SPORTS_MASSAGE.jpg';
+import facialImg from '../assets/services_assets/FACIAL_MASSAGE.jpg';
+import deeptissueImg from '../assets/services_assets/DEEP_TISSUE_MASSAGE.jpg';
+import treatmentMassageImg from '../assets/services_assets/TREATMENT_MASSAGE.jpg';
+
+// 🎨 Color constants
+const COLORS = {
+  primary: "#C4912F",
+  primaryLight: "#E8C99B",
+  textDark: "#C4912F",
+  textLight: "#7E5A1E",
+  muted: "#6b7280",
+  bgLight: "#f9fafb",
+  bgGray: "#f3f4f6",
+  white: "#ffffff",
+  border: "#e5e7eb",
+};
 
 const Services = () => {
-  const serviceCards = [
-    {
-      image: massageImg,
-      title: "Relaxing Swedish massage to ease tension",
-      price: "$80",
-    },
-    {
-      image: facialImg,
-      title: "Hydrating facial with natural extracts",
-      price: "$95",
-    },
-    {
-      image: scrubImg,
-      title: "Detoxifying body scrub with sea salts",
-      price: "$100",
-    },
-    {
-      image: washImg,
-      title: "Detoxifying body wash with sea salts",
-      price: "$85",
-    },
-  ];
-
   const alternatingServices = [
     {
       title: 'HEAD & SHOULDER MASSAGE',
@@ -58,14 +49,50 @@ const Services = () => {
     },
     {
       title: 'FOOT REFLEXOLOGY',
-      text: "Foot Reflexology are often seen as a luxury rather than a necessity. But there's way more to the practice than sheer relaxation and pampering. Foot Reflexology have a host of benefits to your overall health, making them less of a splurge-worthy extra and more of an overloaded healthy habit. Needless to say, they shouldn't just be reserved for vacation massage tables and pedicure add-ons.",
+      text: "Foot Reflexology offers more than relaxation—it has significant health benefits. Regular reflexology helps improve circulation, relieve tension, and balance energy throughout the body.",
       image: footReflexologyImg,
       imageRight: false,
     },
     {
       title: 'HOLISTIC SWEDISH MASSAGE',
-      text: "Holistic Swedish massage therapy promotes relaxation can help ease aches and pains. It helps to release body's natural painkiller and gives a general sense of contentment. This massage not only feels exceptionally good, but it is relaxing and invigorating. It is incredibly popular massage offering long lasting stress relief and a fantastic feeling of well being.",
+      text: "Swedish massage therapy promotes relaxation, eases aches, and releases the body's natural painkillers for a sense of total well-being.",
       image: swedishMassageImg,
+      imageRight: true,
+    },
+    {
+      title: 'AROMATHERAPY',
+      text: "Aromatherapy uses essential oils to calm, relax, or energize you. Oils can be inhaled, bathed in, or massaged into the skin for holistic healing.",
+      image: aromatherapyImg,
+      imageRight: false,
+    },
+    {
+      title: 'BALINESE MASSAGE',
+      text: "Balinese Massage blends techniques like acupressure, reflexology, and stretching for deep relaxation and improved circulation.",
+      image: balineseImg,
+      imageRight: true,
+    },
+    {
+      title: 'SPORTS MASSAGE',
+      text: "Designed for athletes, sports massage helps prevent injuries, improves performance, and supports faster recovery after workouts.",
+      image: sportsImg,
+      imageRight: false,
+    },
+    {
+      title: 'DEEP TISSUE MASSAGE',
+      text: "Deep tissue massage targets inner muscle layers to release tension, reduce inflammation, and accelerate healing from injuries.",
+      image: deeptissueImg,
+      imageRight: true,
+    },
+    {
+      title: 'FACIAL MASSAGE',
+      text: "Facial massage enhances circulation, reduces puffiness, and helps skincare products absorb deeply, leaving your skin radiant and relaxed.",
+      image: facialImg,
+      imageRight: false,
+    },
+    {
+      title: 'TREATMENT MASSAGE',
+      text: "Tailored treatments like lymphatic drainage, gua sha, and anti-aging massages improve skin health and vitality.",
+      image: treatmentMassageImg,
       imageRight: true,
     },
   ];
@@ -74,76 +101,113 @@ const Services = () => {
     <>
       <Header />
 
-      {/* Hero Section */}
-      <div className="relative h-[400px] bg-cover bg-center" style={{ backgroundImage: `url(${serviceImg})` }}>
-        <div className="absolute inset-0 bg-black opacity-30"></div>
-        <div className="relative z-10 flex items-center justify-center h-full">
-          <h1 className="text-5xl md:text-6xl font-serif text-white tracking-wide">
+      {/* 🧘 Hero Section */}
+      <section
+        className="relative h-[400px] md:h-[550px] bg-cover bg-center"
+        style={{ backgroundImage: `url(${serviceImg})` }}
+      >
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="relative z-10 flex items-center justify-center h-full px-4 text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif text-white font-bold tracking-wide">
             Services
           </h1>
         </div>
-      </div>
+      </section>
 
-      {/* Services Grid Section */}
-      <div className="bg-white py-16 font-sans">
+      {/* 💆‍♀️ Services Grid */}
+      <section className="bg-white py-14 font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#E5B6A7] flex items-center justify-center mb-4">
+          <p
+            className="text-sm font-semibold uppercase tracking-wider mb-3"
+            style={{ color: COLORS.primary }}
+          >
             OUR TREATMENT SPECIAL
           </p>
-          <h2 className="text-5xl md:text-6xl font-serif text-gray-800 leading-tight mb-12">
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl font-serif leading-tight mb-10"
+            style={{ color: COLORS.textDark }}
+          >
             Treats Your Soul
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="relative bg-white border border-gray-200 rounded-xl p-6 h-[220px] flex flex-col justify-center items-center text-center shadow-sm hover:shadow-md transition-all duration-300 group">
-              <img className='w-30' src={massage2} alt="" />
-              <h3 className="text-xl font-semibold text-gray-800 mt-2">Medi Facial</h3>
-            </div>
-            <div className="relative bg-white border border-gray-200 rounded-xl p-6 h-[220px] flex flex-col justify-center items-center text-center shadow-sm hover:shadow-md transition-all duration-300 group">
-              <img className='w-30' src={heal} alt="" />
-              <h3 className="text-xl font-semibold text-gray-800 mt-2">Youth Preserve</h3>
-            </div>
-            <div className="relative bg-white border border-gray-200 rounded-xl p-6 h-[220px] flex flex-col justify-center items-center text-center shadow-sm hover:shadow-md transition-all duration-300 group">
-              <img className='w-30' src={wash} alt="" />
-              <h3 className="text-xl font-semibold text-gray-800 mt-2">Body Sculpting</h3>
-            </div>
-            <div className="relative bg-white border border-gray-200 rounded-xl p-6 h-[220px] flex flex-col justify-center items-center text-center shadow-sm hover:shadow-md transition-all duration-300 group">
-              <img className='w-30' src={facial} alt="" />
-              <h3 className="text-xl font-semibold text-gray-800 mt-2">Hair Restore</h3>
-            </div>
+            {[
+              { img: massage2, title: "Medi Facial" },
+              { img: heal, title: "Youth Preserve" },
+              { img: wash, title: "Body Sculpting" },
+              { img: facial, title: "Hair Restore" },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-white border rounded-xl p-6 flex flex-col justify-center items-center text-center shadow-sm hover:shadow-md transition-all duration-300"
+                style={{ borderColor: COLORS.border }}
+              >
+                <img
+                  className="w-20 sm:w-24 md:w-28 object-contain mb-4"
+                  src={item.img}
+                  alt={item.title}
+                />
+                <h3
+                  className="text-lg sm:text-xl font-semibold"
+                  style={{ color: COLORS.textDark }}
+                >
+                  {item.title}
+                </h3>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Redesigned Alternating Services Section */}
-      <div className="bg-[#f8f5f0] py-20 px-4 md:px-8 font-serif">
-        <div className="max-w-7xl mx-auto space-y-24">
+      {/* 🧴 Alternating Services Section */}
+      <section
+        className="py-16 px-4 md:px-8"
+        style={{ backgroundColor: COLORS.bgLight }}
+      >
+        <div className="max-w-7xl mx-auto space-y-16 md:space-y-24">
           {alternatingServices.map((service, index) => (
-            <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}>
-              {/* Image Column */}
-              <div className={`relative ${service.imageRight ? 'lg:order-2' : ''}`}>
+            <div
+              key={index}
+              className={`flex flex-col ${
+                service.imageRight ? 'lg:flex-row-reverse' : 'lg:flex-row'
+              } items-center gap-10 md:gap-16`}
+            >
+              {/* Image */}
+              <div className="w-full lg:w-1/2">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-[450px] object-cover rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                  className="w-full h-[250px] sm:h-[350px] md:h-[450px] object-cover rounded-2xl shadow-lg transform hover:scale-[1.03] transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-3xl"></div>
               </div>
 
-              {/* Text Column */}
-              <div className={`flex flex-col justify-center p-6 ${service.imageRight ? 'lg:order-1 lg:pr-12' : 'lg:pl-12'}`}>
-                <p className="text-sm font-semibold uppercase tracking-widest text-[#a87f6e] mb-2">
+              {/* Text */}
+              <div className="w-full lg:w-1/2 text-center lg:text-left">
+                <p
+                  className="text-xs sm:text-sm font-semibold uppercase tracking-widest mb-2"
+                  style={{ color: COLORS.primary }}
+                >
                   Signature Service
                 </p>
-                <h3 className="text-4xl md:text-5xl font-bold text-[#5c4a45] mb-6 leading-tight">
+                <h3
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 leading-tight"
+                  style={{ color: COLORS.textDark }}
+                >
                   {service.title}
                 </h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p
+                  className="text-base sm:text-lg leading-relaxed"
+                  style={{ color: COLORS.textLight }}
+                >
                   {service.text}
                 </p>
                 <Link
-                  to="/book-now"
-                  className="mt-8 self-start bg-[#a87f6e] text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-[#8b6b5e]"
+                  to="/contact"
+                  className="inline-block mt-6 md:mt-8 font-semibold py-3 px-6 sm:px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+                  style={{
+                    backgroundColor: COLORS.primary,
+                    color: COLORS.white,
+                  }}
                 >
                   BOOK NOW
                 </Link>
@@ -151,107 +215,8 @@ const Services = () => {
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
-      {/* Pricing Section (remains unchanged for this request) */}
-      <div className="bg-[#F8F5F1] my-10 py-16 px-4 md:px-8 font-sans">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-          {/* Pricing Card 1 */}
-          <div className="relative bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center border-t-8 border-[#A5783A]">
-            <div className="absolute top-0 right-8 transform -translate-y-1/2 rotate-45 h-16 w-16 bg-[#A5783A] shadow-md flex items-center justify-center">
-              <span className="text-sm font-bold text-white uppercase tracking-wider transform -rotate-45">Basic Plan</span>
-            </div>
-            <div className="my-8">
-              <h3 className="text-5xl font-serif text-gray-800">$129</h3>
-              <p className="text-gray-500 mt-2">Par month</p>
-            </div>
-            <p className="text-gray-600 mb-6">
-              Lnteger sapien nec sapien sollicitudin ultrices cras tempor id lorem.
-            </p>
-            <ul className="text-left w-full space-y-4 mb-8">
-              <li className="flex items-center text-gray-700">
-                <svg className="h-5 w-5 text-[#A5783A] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                <span>Aromatherapy Candles</span>
-              </li>
-              <li className="flex items-center text-gray-700">
-                <svg className="h-5 w-5 text-[#A5783A] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                <span>True Transformation</span>
-              </li>
-              <li className="flex items-center text-gray-700">
-                <svg className="h-5 w-5 text-[#A5783A] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                <span>Oil Massage</span>
-              </li>
-              <li className="flex items-center text-gray-700">
-                <svg className="h-5 w-5 text-[#A5783A] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                <span>Meditation Retreats</span>
-              </li>
-              <li className="flex items-center text-gray-700">
-                <svg className="h-5 w-5 text-[#A5783A] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                <span>Organic Essential Oil</span>
-              </li>
-            </ul>
-            <p className="text-gray-500 text-sm mt-auto mb-6">Up to 10 users + $1.99 per user</p>
-            <a href="#" className="bg-white border border-[#A5783A] text-[#A5783A] font-bold py-3 px-12 rounded-full transition-colors duration-300 hover:bg-[#A5783A] hover:text-white">
-              CHOOSE PLAN
-            </a>
-          </div>
-          {/* Pricing Card 2 */}
-          <div className="relative bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center border-t-8 border-[#A5783A]">
-            <div className="absolute top-0 right-8 transform -translate-y-1/2 rotate-45 h-16 w-16 bg-[#A5783A] shadow-md flex items-center justify-center">
-              <span className="text-sm font-bold text-white uppercase tracking-wider transform -rotate-45">Premium Plan</span>
-            </div>
-            <div className="my-8">
-              <h3 className="text-5xl font-serif text-gray-800">$159</h3>
-              <p className="text-gray-500 mt-2">Par month</p>
-            </div>
-            <p className="text-gray-600 mb-6">
-              Lnteger sapien nec sapien sollicitudin ultrices cras tempor id lorem.
-            </p>
-            <ul className="text-left w-full space-y-4 mb-8">
-              <li className="flex items-center text-gray-700">
-                <svg className="h-5 w-5 text-[#A5783A] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                <span>Aromatherapy Candles</span>
-              </li>
-              <li className="flex items-center text-gray-700">
-                <svg className="h-5 w-5 text-[#A5783A] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                <span>True Transformation</span>
-              </li>
-              <li className="flex items-center text-gray-700">
-                <svg className="h-5 w-5 text-[#A5783A] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                <span>Oil Massage</span>
-              </li>
-              <li className="flex items-center text-gray-700">
-                <svg className="h-5 w-5 text-[#A5783A] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                <span>Meditation Retreats</span>
-              </li>
-              <li className="flex items-center text-gray-700">
-                <svg className="h-5 w-5 text-[#A5783A] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                <span>Organic Essential Oil</span>
-              </li>
-            </ul>
-            <p className="text-gray-500 text-sm mt-auto mb-6">Up to 10 users + $1.99 per user</p>
-            <a href="#" className="bg-white border border-[#A5783A] text-[#A5783A] font-bold py-3 px-12 rounded-full transition-colors duration-300 hover:bg-[#A5783A] hover:text-white">
-              CHOOSE PLAN
-            </a>
-          </div>
-          {/* Text Section */}
-          <div className="bg-transparent p-8 flex flex-col justify-center">
-            <h4 className="text-sm font-bold text-[#A5783A] mb-2 uppercase tracking-widest">
-              <span className="mr-2">
-                <svg className="h-4 w-4 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1.393-7.555a.75.75 0 011.092.704l-.578 2.316a.75.75 0 11-1.456-.364L8.71 11.13a.75.75 0 01-.365-1.455zM10 7a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd"></path></svg>
-              </span>
-              CHOOSE A PLAN
-            </h4>
-            <h2 className="text-5xl font-serif text-gray-800 leading-tight mb-4">
-              Flexible Pricing Plan
-            </h2>
-            <p className="text-gray-600 leading-relaxed">
-              It is a long established fact that a reader will be distracted the readable content of a page when looking at layout the point of using lorem the is ipsum less normal distribution of letters
-            </p>
-          </div>
-        </div>
-      </div>
-          
       <Footer />
     </>
   );

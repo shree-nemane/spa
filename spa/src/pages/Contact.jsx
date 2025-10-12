@@ -105,15 +105,15 @@ const Contact = () => {
               {/* Map Placeholder */}
               <div className="w-full h-64 bg-gray-200 rounded-md overflow-hidden shadow-sm">
                 {/* Replace with actual Google Maps iframe or a static map image */}
-                <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227748.86053520977!2d75.79055784999998!3d26.885210750000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4adf4c57e281%3A0xce1c63a0cf22e09!2sJaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1759592522450!5m2!1sen!2sin" 
-      width="600" 
-      height="450" 
-      style={{ border: 0 }} 
-      allowFullScreen="" 
-      loading="lazy" 
-      referrerPolicy="no-referrer-when-downgrade">
-    </iframe>
+                <iframe
+     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115801.5891744721!2d74.53919243297176!3d24.90481431764317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3968a0424d11a8d9%3A0x79f097c869345f8d!2sChittorgarh%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1760258507659!5m2!1sen!2sin" 
+      width="600"
+      height="450"
+      style={{ border: 0 }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
               </div>
 
               <button
@@ -131,13 +131,13 @@ const Contact = () => {
             <h2 className={`text-3xl font-serif text-[${darkGrayText}] mb-8`}>Our Details</h2>
             <div className="space-y-4 mb-10">
               <p className={`text-[${darkGrayText}]`}>
-                <strong>Phone:</strong> + 00 111 222 333
+                <strong>Phone:</strong> +91 9251276392
               </p>
               <p className={`text-[${darkGrayText}]`}>
-                <strong>Email:</strong> info@xyzspa.com
+                <strong>Email:</strong> ruathewellnessspa@gmail.com
               </p>
               <p className={`text-[${darkGrayText}]`}>
-                <strong>Address:</strong> 123 Spa Wellness Rd, City, Country
+                <strong>Address:</strong> 1st Floor, Ofc. No.1, Raj Mall, Pratap Nagar, Chittaurgarh, India, 312205
               </p>
             </div>
 
@@ -149,11 +149,7 @@ const Contact = () => {
               <p>Sunday: Closed</p>
             </div>
             
-            {/* Directions / Calendar - simplified to text */}
-            <h3 className={`text-xl font-serif text-[${darkGrayText}] font-bold mb-4`}>Directions</h3>
-            <p className={`text-[${darkGrayText}] mb-10`}>
-              Ample parking available, easily accessible.
-            </p>
+            
 
             {/* Social Media Links */}
             <h3 className={`text-xl font-serif text-[${darkGrayText}] font-bold mb-4`}>Appointment Book</h3>
