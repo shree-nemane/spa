@@ -103,7 +103,7 @@ const Services = () => {
 
       {/* 🧘 Hero Section */}
       <section
-        className="relative h-[400px] md:h-[550px] bg-cover bg-center"
+        className="relative h-[60vh] md:h-[70vh] bg-cover bg-center"
         style={{ backgroundImage: `url(${serviceImg})` }}
       >
         <div className="absolute inset-0 bg-black/40"></div>

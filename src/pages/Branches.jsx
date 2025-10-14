@@ -10,7 +10,6 @@ const branchLocations = [
    ];
 
 const BranchIcon = ({ city }) => {
-    // A more modern, abstract icon representing a building or landmark
     return (
         <svg
             className="w-16 h-16 mx-auto mb-4 text-[#C4912F] transform group-hover:scale-110 transition-transform duration-300"
@@ -77,7 +76,7 @@ const Branches = () => {
                                 <p className="text-sm text-gray-700 leading-relaxed max-w-[250px] mt-auto">
                                     {location.address}
                                 </p>
-                                <a href="#" className="mt-6 text-[#a87f6e] font-semibold text-sm uppercase tracking-widest hover:underline transition-colors duration-300">
+                                <a target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/znbEy8NLkixjpuyk9" className="mt-6 text-[#a87f6e] font-semibold text-sm uppercase tracking-widest hover:underline transition-colors duration-300">
                                     Get Directions &rarr;
                                 </a>
                             </div>
